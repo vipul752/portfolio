@@ -2,6 +2,10 @@ import React from "react";
 import { data } from "../constant/constant";
 
 const Home = () => {
+  const clickHandler = () => {
+    document.getElementById("about").scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div
       id="home"
@@ -27,7 +31,10 @@ const Home = () => {
               excellent software that improves the lives of those around me.
             </p>
           </div>
-          <button className="bg-purple-600 text-white px-8 py-4 rounded-full hover:bg-purple-700 transition duration-300">
+          <button
+            onClick={clickHandler}
+            className="bg-purple-600 text-white px-8 py-4 rounded-full hover:bg-purple-700 transition duration-300"
+          >
             About Me &rarr;
           </button>
         </div>
