@@ -80,20 +80,21 @@ const techStack = {
     }
   ],
 };
-
 const TechStack = () => {
   const [selectedCategory, setSelectedCategory] = useState("Web Development");
 
   return (
     <section className="py-16 px-6 lg:px-24">
       <div className="text-center mb-8">
-        <h2 className="text-5xl font-medium mb-10">Tech Stack</h2>
-        <div className="flex justify-center gap-4 mt-4">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium mb-10">
+          Tech Stack
+        </h2>
+        <div className="flex flex-wrap justify-center gap-4 mt-4">
           {Object.keys(techStack).map((category) => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-7 py-3 rounded-xl ${
+              className={`px-4 sm:px-7 py-2 sm:py-3 rounded-xl text-sm sm:text-base ${
                 selectedCategory === category
                   ? "bg-purple-500 text-white"
                   : "bg-gray-200 text-gray-700"
@@ -105,16 +106,16 @@ const TechStack = () => {
         </div>
       </div>
 
-      <div className="lg:w-3/4 2xl:w-3/5 my-8 mx-auto md:px-12 grid grid-cols-3 md:grid-cols-4 xl:grid-cols-5 place-items-center gap-8">
+      <div className="lg:w-3/4 2xl:w-3/5 my-8 mx-auto md:px-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 place-items-center gap-6 sm:gap-8">
         {techStack[selectedCategory].map((tech) => (
-          <div key={tech.name} className="flex flex-col items-center space-y-4">
+          <div key={tech.name} className="flex flex-col items-center space-y-2 sm:space-y-4">
             {/* Icon container */}
-            <div className="bg-slate-50  rounded-full p-7">
-              <img src={tech.icon} alt={tech.name} className="w-12 h-12" />
+            <div className="bg-slate-50 rounded-full p-5 sm:p-7">
+              <img src={tech.icon} alt={tech.name} className="w-10 h-10 sm:w-12 sm:h-12" />
             </div>
 
             {/* Tech name */}
-            <p className="text-center text-base font-medium">{tech.name}</p>
+            <p className="text-center text-sm sm:text-base font-medium">{tech.name}</p>
           </div>
         ))}
       </div>
