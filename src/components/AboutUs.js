@@ -38,8 +38,7 @@ const AboutUs = () => {
             <button
               onClick={() => {
                 window.open(
-                  "https://drive.google.com/file/d/1pJspWviTnEz2hJ7wwOlXPuhVmPmROW9S/view?usp=drive_link",
-                  "_blank"
+                  "https://drive.google.com/file/d/1pJspWviTnEz2hJ7wwOlXPuhVmPmROW9S/view?usp=drive_link"
                 );
               }}
               className="mt-6 px-8 sm:px-10 py-3 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition duration-300"
