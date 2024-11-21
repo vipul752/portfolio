@@ -15,7 +15,7 @@ const AboutUs = () => {
             <img
               alt="profile"
               className="w-full h-48 sm:h-60 md:h-72 lg:h-80 rounded-2xl object-cover grayscale hover:grayscale-0 transition-all bg-violet-100"
-              src={data}
+              src={data.image}
             />
             <p className="text-sm italic text-gray-500">
               &lt; Click to / 💡&gt;
@@ -35,7 +35,15 @@ const AboutUs = () => {
               scalability, and performance. I am passionate about building
               excellent software that improves the lives of those around me.
             </p>
-            <button className="mt-6 px-8 sm:px-10 py-3 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition duration-300">
+            <button
+              onClick={() => {
+                window.open(
+                  "https://drive.google.com/file/d/1pJspWviTnEz2hJ7wwOlXPuhVmPmROW9S/view?usp=drive_link",
+                  "_blank"
+                );
+              }}
+              className="mt-6 px-8 sm:px-10 py-3 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition duration-300"
+            >
               Resume
             </button>
           </div>

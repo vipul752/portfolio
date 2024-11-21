@@ -17,7 +17,7 @@ const Home = () => {
           <img
             alt="avatar"
             className="rounded-full w-full h-full object-cover border-8 border-white"
-            src={data}
+            src={data.image}
           />
         </div>
 

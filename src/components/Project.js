@@ -1,8 +1,8 @@
 import React from "react";
-import swiggy from "/Users/vipulkumar/Desktop/frontend/portfolio /portfolio/src/photos/swiggy.png";
-import youtube from "/Users/vipulkumar/Desktop/frontend/portfolio /portfolio/src/photos/youtube.png";
+import swiggy from "/Users/vipulkumar/Desktop/frontend/portfolio ✅/portfolio/src/photos/swiggy.jpeg";
+import youtube from "/Users/vipulkumar/Desktop/frontend/portfolio ✅/portfolio/src/photos/youtube.jpeg";
 import { FaGithub } from "react-icons/fa"; // Importing GitHub icon from react-icons
-import wanderlust from "/Users/vipulkumar/Desktop/frontend/portfolio /portfolio/src/photos/wanderlust2.jpeg";
+import wanderlust from "/Users/vipulkumar/Desktop/frontend/portfolio ✅/portfolio/src/photos/wanderlust2.jpeg";
 
 const projects = [
   {
