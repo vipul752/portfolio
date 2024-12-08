@@ -9,10 +9,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_4myfzwk", // Replace with your EmailJS Service ID
-        "template_1qpmm0l", // Replace with your EmailJS Template ID
+        process.env.REACT_APP_SERVICE_ID, // Replace with your EmailJS Service ID
+        process.env.REACT_APP_TEMPLATE_ID, // Replace with your EmailJS Template ID
         form.current,
-        "XI-XxpBG4HP29aRoa" // Replace with your EmailJS Public Key
+        process.env.REACT_APP_PUBLIC_KEY // Replace with your EmailJS Public Key
       )
       .then(
         (result) => {
@@ -43,9 +43,13 @@ const Contact = () => {
         </div>
 
         {/* Right Side - Contact Form */}
-        <div className="md:w-1/2 bg-white p-8 rounded-lg 
-        ">
-          <h3 className="text-2xl mb-2 text-left font-semibold">Get in touch</h3>
+        <div
+          className="md:w-1/2 bg-white p-8 rounded-lg 
+        "
+        >
+          <h3 className="text-2xl mb-2 text-left font-semibold">
+            Get in touch
+          </h3>
           <p className="text-gray-400 text-left text-sm mb-4">
             My inbox is always open. Whether you have a question or just want to
             say hello, I will try my best to get back to you!
