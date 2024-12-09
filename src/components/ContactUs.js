@@ -1,5 +1,7 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
   const form = useRef();
@@ -16,24 +18,43 @@ const Contact = () => {
       )
       .then(
         (result) => {
-          alert("Message sent successfully!");
+          toast.success(" Message sent successfully!", {
+            position: "top-center",
+            autoClose: 3000, // Closes after 3 seconds
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: false,
+            className:
+              "bg-green-500 text-white text-sm font-semibold rounded-lg shadow-lg",
+            bodyClassName: "text-center",
+          });
         },
         (error) => {
-          alert("An error occurred. Please try again.");
+          toast.error("Message not sent successfully.", {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: false,
+            className:
+              "bg-red-500 text-white text-sm font-semibold rounded-lg shadow-lg",
+            bodyClassName: "text-center",
+          });
         }
       );
+
     e.target.reset();
   };
 
   return (
     <section id="contact" className="mb-16 mx-4 lg:mx-0">
-      {/* Centered Heading */}
       <h2 className="text-4xl font-medium text-center text-gray-800 mb-10">
         Contact Us
       </h2>
 
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-center px-6 md:px-12">
-        {/* Left Side - Illustration */}
         <div className="md:w-1/2 flex justify-center mb-8 md:mb-0">
           <img
             src="https://dhruv-portfolio-mu.vercel.app/contact.png"
@@ -42,11 +63,7 @@ const Contact = () => {
           />
         </div>
 
-        {/* Right Side - Contact Form */}
-        <div
-          className="md:w-1/2 bg-white p-8 rounded-lg 
-        "
-        >
+        <div className="md:w-1/2 bg-white p-8 rounded-lg">
           <h3 className="text-2xl mb-2 text-left font-semibold">
             Get in touch
           </h3>
@@ -97,6 +114,9 @@ const Contact = () => {
           </form>
         </div>
       </div>
+
+      {/* Toast container for notifications */}
+      <ToastContainer />
     </section>
   );
 };
