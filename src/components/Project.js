@@ -8,7 +8,7 @@ const projects = [
   {
     title: "Swiggy",
     image: swiggy,
-    techStack: "React, ExpressJs, MongoDB",
+    techStack: "React, ExpressJs, MongoDB , RazorPay",
     githubLink: "https://github.com/vipul752/swiggy-app",
   },
   {
@@ -21,7 +21,7 @@ const projects = [
     title: "Voting-App",
     image:
       "https://media.istockphoto.com/id/1257379398/vector/freedom-of-choice-concept-people-vote-pros-and-cons-online-voting-concept-electronic-voting.jpg?s=612x612&w=0&k=20&c=h1jIYSPpZVb2YlzrnGUS7x81AJgyLayiqlmv8-WPE90=",
-    techStack: "ExpressJs, MongoDB",
+    techStack: "ExpressJs, MongoDB, Mongoose",
     githubLink: "https://github.com/vipul752/voting-app",
   },
   {
