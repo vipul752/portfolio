@@ -55,6 +55,18 @@ const techStack = {
       name: "Docker",
       icon: "https://dhruv-portfolio-mu.vercel.app/_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fcolor%2F144%2Fnull%2Fdocker.png&w=256&q=75",
     },
+    {
+      name: "Redis",
+      icon: "https://cdn4.iconfinder.com/data/icons/redis-2/1451/Untitled-2-512.png",
+    },
+    {
+      name: "kafka",
+      icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Apache_kafka-icon.svg/1200px-Apache_kafka-icon.svg.png",
+    },
+    {
+      name:"MySQL",
+      icon:"https://dhruv-portfolio-mu.vercel.app/_next/image?url=https%3A%2F%2Fimg.icons8.com%2Fios-filled%2F144%2Fnull%2Fmysql-logo.png&w=256&q=75"
+    }
   ],
   Others: [
     {
