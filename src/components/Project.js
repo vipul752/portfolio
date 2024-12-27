@@ -263,7 +263,7 @@ const Contact = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent bottom-0 opacity-50" />
               </div>
             </div>
-            <form ref={form} onSubmit={sendEmail} className="space-y-6">
+            <form ref={form} onSubmit={sendEmail} className="space-y-3">
               <div className="relative">
                 <input
                   type="text"
