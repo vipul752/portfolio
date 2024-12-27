@@ -242,7 +242,7 @@ const Contact = () => {
 
       <div className=" mx-auto relative max-w-7xl  " >
         <div className="bg-black/50 rounded-2xl p-8 md:p-12 border border-zinc-800/50 backdrop-blur-sm">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-center justify-center">
             <div className="space-y-6">
               <div className="h-20">
                 <Canvas camera={{ position: [0, 0, 5] }}>
@@ -263,7 +263,7 @@ const Contact = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent bottom-0 opacity-50" />
               </div>
             </div>
-            <form ref={form} onSubmit={sendEmail} className="space-y-3">
+            <form ref={form} onSubmit={sendEmail} className="justify-between items-center space-y-3">
               <div className="relative">
                 <input
                   type="text"
