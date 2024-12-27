@@ -1,22 +1,20 @@
 import "./App.css";
-import AboutUs from "./components/AboutUs";
-import ContactUs from "./components/ContactUs";
 import Experience from "./components/Experience";
-import Header from "./components/Header";
+import Footer from "./components/Footer";
+
 import Home from "./components/Home";
 import Project from "./components/Project";
-import TechStack from "./components/TechStack";
+import { Contact } from "./components/Project";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Home/>
-      <AboutUs/>
-      <TechStack/>
-      <Project/>
-      <Experience/>
-      <ContactUs/>
+      <Home />
+
+      <Project />
+      <Experience />
+      <Contact />
+      <Footer/>
     </div>
   );
 }
