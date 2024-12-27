@@ -1,31 +1,7 @@
 import React from "react";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Text, Center } from "@react-three/drei";
+import { Text, Center } from "@react-three/drei";
 
 // 3D Animated Title for Footer
-const AnimatedTitle = ({ text }) => {
-  return (
-    <group>
-      <Center>
-        <Text
-          fontSize={2}
-          maxWidth={200}
-          lineHeight={1}
-          letterSpacing={0.02}
-          textAlign="center"
-          color="#61DBFB"
-        >
-          {text}
-          <meshStandardMaterial
-            color="#61DBFB"
-            emissive="#61DBFB"
-            emissiveIntensity={0.5}
-          />
-        </Text>
-      </Center>
-    </group>
-  );
-};
 
 const Footer = () => {
   return (

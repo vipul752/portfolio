@@ -6,8 +6,6 @@ import * as THREE from "three";
 import {
   Github,
   Linkedin,
-  Mail,
-  User,
   Code,
   Briefcase,
   Phone,
