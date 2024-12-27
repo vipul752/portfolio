@@ -102,8 +102,9 @@ const ProjectCard = ({ project, index }) => {
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-48 rounded-lg object-cover transform group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-48 md:h-60 lg:h-72 rounded-lg object-cover transform group-hover:scale-105 transition-transform duration-500"
         />
+
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
           <a
             href={project.githubLink}
@@ -117,9 +118,10 @@ const ProjectCard = ({ project, index }) => {
         </div>
       </div>
       <div className="p-6">
-        <h3 className="text-xl font-semibold text-white mb-2">
+        <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-white mb-2">
           {project.title}
         </h3>
+
         <div className="flex flex-wrap gap-2">
           {project.techStack.split(",").map((tech, i) => (
             <span
@@ -142,7 +144,10 @@ const Project = () => {
       id="projects"
     >
       <div className="absolute inset-0">
-        <Canvas camera={{ position: [0, 0, 5] }}>
+        <Canvas
+          camera={{ position: [0, 0, 5] }}
+          className="w-full h-64 sm:h-80 lg:h-96"
+        >
           <ambientLight intensity={0.5} />
           <pointLight position={[10, 10, 10]} />
           {[...Array(5)].map((_, i) => (
@@ -169,8 +174,7 @@ const Project = () => {
             <OrbitControls enableZoom={false} />
           </Canvas>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <ProjectCard key={index} project={project} index={index} />
           ))}
@@ -236,7 +240,7 @@ const Contact = () => {
         </Canvas>
       </div>
 
-      <div className="max-w-7xl mx-auto relative">
+      <div className=" mx-auto relative max-w-7xl  " >
         <div className="bg-black/50 rounded-2xl p-8 md:p-12 border border-zinc-800/50 backdrop-blur-sm">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
@@ -248,10 +252,7 @@ const Contact = () => {
                   <OrbitControls enableZoom={false} />
                 </Canvas>
               </div>
-              <p className="text-zinc-400 leading-relaxed">
-                My inbox is always open. Whether you have a question or just
-                want to say hello, I'll try my best to get back to you!
-              </p>
+              
 
               <div className="relative">
                 <img
@@ -262,44 +263,34 @@ const Contact = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent bottom-0 opacity-50" />
               </div>
             </div>
-
             <form ref={form} onSubmit={sendEmail} className="space-y-6">
               <div className="relative">
-                <div className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400">
-                  <User size={18} />
-                </div>
                 <input
                   type="text"
                   name="user_name"
                   placeholder="Your Name"
                   required
-                  className="w-full bg-zinc-900/50 text-white rounded-xl border border-zinc-800/50 p-3 pl-12 focus:outline-none focus:border-blue-500/50 transition-colors duration-300 placeholder:text-zinc-500"
+                  className="w-full bg-zinc-900/50 text-white rounded-xl border border-zinc-800/50 p-3 focus:outline-none focus:border-blue-500/50 transition-colors duration-300 placeholder:text-zinc-500"
                 />
               </div>
 
               <div className="relative">
-                <div className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400">
-                  <Mail size={18} />
-                </div>
                 <input
                   type="email"
                   name="user_email"
                   placeholder="Your Email"
                   required
-                  className="w-full bg-zinc-900/50 text-white rounded-xl border border-zinc-800/50 p-3 pl-12 focus:outline-none focus:border-blue-500/50 transition-colors duration-300 placeholder:text-zinc-500"
+                  className="w-full bg-zinc-900/50 text-white rounded-xl border border-zinc-800/50 p-3 focus:outline-none focus:border-blue-500/50 transition-colors duration-300 placeholder:text-zinc-500"
                 />
               </div>
 
               <div className="relative">
-                <div className="absolute left-3 top-3 text-zinc-400">
-                  <MessageSquare size={18} />
-                </div>
                 <textarea
                   name="message"
                   rows="4"
                   placeholder="Your Message"
                   required
-                  className="w-full bg-zinc-900/50 text-white rounded-xl border border-zinc-800/50 p-3 pl-12 focus:outline-none focus:border-blue-500/50 transition-colors duration-300 placeholder:text-zinc-500"
+                  className="w-full bg-zinc-900/50 text-white rounded-xl border border-zinc-800/50 p-3 focus:outline-none focus:border-blue-500/50 transition-colors duration-300 placeholder:text-zinc-500"
                 />
               </div>
 

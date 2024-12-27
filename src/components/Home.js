@@ -57,7 +57,7 @@ const AnimatedSphere = () => {
 
 function HeroSphere() {
   return (
-    <Canvas className="w-96 h-96">
+    <Canvas className="w-full sm:w-96 h-96">
       <ambientLight intensity={0.5} />
       <directionalLight position={[5, 5, 5]} intensity={1} />
       <AnimatedSphere />
@@ -195,14 +195,15 @@ const TechCard = ({ tech, index }) => (
       animationDelay: `${index * 100}ms`,
     }}
   >
-    <div className="w-16 h-16 mx-auto mb-4 bg-zinc-800 rounded-xl flex items-center justify-center">
+    <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 bg-zinc-800 rounded-xl flex items-center justify-center">
       {techIcons[tech] || <Code size={24} />}
     </div>
-    <p className="text-center font-medium text-zinc-400 group-hover:text-white transition-colors duration-300">
+    <p className="text-center font-medium text-zinc-400 group-hover:text-white transition-colors duration-300 text-sm sm:text-base lg:text-lg">
       {tech}
     </p>
   </div>
 );
+
 const NavLink = ({ Icon, text }) => (
   <a
     href={`#${text.toLowerCase()}`}
@@ -223,11 +224,28 @@ export default function Portfolio3D() {
   }, []);
 
   const techStack = {
-    web: ["React", "Node.js", "MongoDB", "Mongoose", "Express.js"],
-    frontend: ["HTML", "CSS", "JavaScript", "Redux", "Tailwind CSS"],
-    backend: ["Docker", "Redis", "Kafka", "MySQL", "TypeScript", "Prisma"],
+    web: [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Mongoose",
+      "Express.js",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Redux",
+      "Tailwind CSS",
+      "Docker",
+      "Redis",
+      "Kafka",
+      "MySQL",
+      "TypeScript",
+      "Prisma",
+      "Next.js",
+      "PostgreSQL",
+    ],
+
     tools: ["Git", "VS Code", "Postman"],
-    other: ["Next.js", "PostgreSQL"],
   };
 
   const socialLinks = [
@@ -248,7 +266,7 @@ export default function Portfolio3D() {
             <h1 className="text-3xl font-bold text-white hover:text-blue-400 transition-colors duration-300">
               Vipul
             </h1>
-            <div className="flex gap-8">
+            <div className="hidden sm:flex gap-8">
               {[
                 { icon: Briefcase, text: "Projects" },
                 { icon: Phone, text: "Contact" },
@@ -267,23 +285,23 @@ export default function Portfolio3D() {
           }`}
         >
           <div className="bg-zinc-950/50 rounded-2xl p-12 border border-zinc-800/50 backdrop-blur-sm">
-            <div className="flex items-center gap-12">
+            <div className="flex flex-col sm:flex-row gap-12">
               <div className="flex-1 space-y-8">
                 <div className="space-y-4">
-                  <h2 className="text-6xl font-bold text-white">
+                  <h2 className="text-4xl sm:text-6xl font-bold text-white">
                     Hey, I'm{" "}
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
                       Vipul Kumar
                     </span>
                   </h2>
-                  <p className="text-xl text-zinc-400 leading-relaxed">
+                  <p className="text-lg sm:text-xl text-zinc-400 leading-relaxed">
                     Building innovative web applications with a focus on detail,
                     scalability, and performance. Passionate about creating
                     seamless user experiences.
                   </p>
                 </div>
 
-                <div className="flex  gap-6 items-center">
+                <div className="flex gap-6 items-center">
                   <button
                     onClick={() => {
                       window.open(
@@ -314,7 +332,7 @@ export default function Portfolio3D() {
                 </div>
               </div>
 
-              <div className="relative w-96 h-96">
+              <div className="relative w-full sm:w-96 h-96 sm:h-96">
                 <HeroSphere />
               </div>
             </div>
@@ -323,10 +341,10 @@ export default function Portfolio3D() {
 
         <section>
           <div className="bg-zinc-950/50 rounded-2xl p-12 border border-zinc-800/50 backdrop-blur-sm">
-            <h3 className="text-4xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+            <h3 className="text-4xl sm:text-5xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
               Tech Stack
             </h3>
-            <div className="flex gap-4 mb-12 flex-wrap">
+            <div className="flex flex-wrap gap-4 mb-12">
               {Object.keys(techStack).map((tab) => (
                 <button
                   key={tab}
@@ -341,7 +359,7 @@ export default function Portfolio3D() {
                 </button>
               ))}
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
               {techStack[activeTab].map((tech, index) => (
                 <TechCard key={tech} tech={tech} index={index} />
               ))}
