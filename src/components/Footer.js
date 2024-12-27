@@ -5,7 +5,7 @@ import { Text, Center } from "@react-three/drei";
 
 const Footer = () => {
   return (
-    <footer className="bg-black py-24 px-8">
+    <footer className=" py-24 px-8">
       <div className="max-w-7xl mx-auto">
         {/* Footer Text */}
         <div className="mt-8 text-center text-zinc-400">

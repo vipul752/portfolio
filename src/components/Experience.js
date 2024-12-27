@@ -8,7 +8,7 @@ const AnimatedTitle = ({ text }) => {
     <group>
       <Center>
         <Text
-          fontSize={3}
+          fontSize={4}
           maxWidth={200}
           lineHeight={1}
           letterSpacing={0.02}
@@ -29,7 +29,7 @@ const AnimatedTitle = ({ text }) => {
 
 const Education = () => {
   return (
-    <section id="education" className="py-24 px-8 bg-black relative overflow-hidden">
+    <section id="education" className="py-24 px-8 relative overflow-hidden">
       {/* Background Animation */}
       <div className="absolute inset-0">
         <Canvas camera={{ position: [0, 0, 5] }}>
@@ -53,8 +53,8 @@ const Education = () => {
         {/* Timeline */}
         <div className="space-y-12">
           {/* Item 1 */}
-          <div className="bg-black/50 rounded-2xl p-8 border border-zinc-800/50 backdrop-blur-sm hover:border-zinc-700 transition-transform duration-300 transform hover:-translate-y-2">
-            <h3 className="font-bold text-lg text-white">G.L Bajaj Management of Institute (GLBIM)</h3>
+          <div className="rounded-2xl p-8 border border-zinc hover:border-zinc-700 transition-transform duration-300 transform hover:-translate-y-1">
+            <h3 className="font-bold text-lg text-black">G.L Bajaj Management of Institute (GLBIM)</h3>
             <p className="text-sm text-gray-400">BCA | 2023 - 2026</p>
             <p className="text-gray-400 mt-2">
               • Pursuing Bachelor's of Computer Application from GLBIM.
@@ -62,8 +62,8 @@ const Education = () => {
           </div>
 
           {/* Item 2 */}
-          <div className="bg-black/50 rounded-2xl p-8 border border-zinc-800/50 backdrop-blur-sm hover:border-zinc-700 transition-transform duration-300 transform hover:-translate-y-2">
-            <h3 className="font-bold text-lg text-white">Bloom Public School | CBSE</h3>
+          <div className="rounded-2xl p-8 border border-zinc hover:border-zinc-700 transition-transform duration-300 transform hover:-translate-y-1">
+            <h3 className="font-bold text-lg text-black">Bloom Public School | CBSE</h3>
             <p className="text-sm text-gray-400">Commerce | 2021 - 2023</p>
             <p className="text-gray-400 mt-2">
               • Class 10th: 8 CGPA <br />• Class 12th: 81 Percentage

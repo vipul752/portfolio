@@ -190,15 +190,15 @@ const techIcons = {
 
 const TechCard = ({ tech, index }) => (
   <div
-    className="group bg-zinc-900/50 p-4 rounded-3xl border border-zinc-800/50 hover:border-zinc-700 transition-all duration-500 transform hover:-translate-y-4"
+    className="group  p-4 rounded-3xl shadow-md hover:border-gray-300 transition-all duration-300 transform hover:-translate-y-2"
     style={{
       animationDelay: `${index * 100}ms`,
     }}
   >
-    <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 bg-zinc-800 rounded-2xl flex items-center justify-center">
+    <div className="w-10 h-12 sm:w-16 sm:h-16 mx-auto mb-4 rounded-3xl flex items-center justify-center">
       {techIcons[tech] || <Code size={24} />}
     </div>
-    <p className="text-center font-medium text-zinc-400 group-hover:text-white transition-colors duration-300 text-sm sm:text-base lg:text-lg">
+    <p className="text-center font-medium text-gray-600 group-hover:text-black transition-colors duration-300 text-sm sm:text-base lg:text-lg">
       {tech}
     </p>
   </div>
@@ -207,11 +207,11 @@ const TechCard = ({ tech, index }) => (
 const NavLink = ({ Icon, text }) => (
   <a
     href={`#${text.toLowerCase()}`}
-    className="flex items-center gap-2 text-zinc-400 hover:text-white transition-all duration-300 hover:scale-110 relative group"
+    className="flex items-center gap-2 text-gray-600 hover:text-black transition-all duration-300 hover:scale-110 relative group"
   >
     <Icon size={18} />
     {text}
-    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
+    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full" />
   </a>
 );
 
@@ -257,13 +257,13 @@ export default function Portfolio3D() {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-zinc-300 relative overflow-hidden">
-      <ParticleBackground />
+    <div className="min-h-screen text-gray-800 relative overflow-hidden">
+     <ParticleBackground/>
 
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-lg border-b border-zinc-800/50">
+      <nav className="fixed top-0 left-0 right-0 z-50  backdrop-blur-lg ">
         <div className="max-w-7xl mx-auto px-8 py-4">
           <div className="flex justify-between items-center">
-            <h1 className="text-3xl font-bold text-white hover:text-blue-400 transition-colors duration-300">
+            <h1 className="text-3xl font-bold text-gray-800 hover:text-blue-500 transition-colors duration-300">
               Vipul
             </h1>
             <div className="hidden sm:flex gap-8">
@@ -284,17 +284,17 @@ export default function Portfolio3D() {
             isVisible ? "opacity-100" : "opacity-0"
           }`}
         >
-          <div className="bg-zinc-950/50 rounded-2xl p-12 border border-zinc-800/50 backdrop-blur-sm">
+          <div className=" rounded-2xl p-12 ">
             <div className="flex flex-col sm:flex-row gap-12">
               <div className="flex-1 space-y-8">
-                <div className="space-y-4">
-                  <h2 className="text-4xl sm:text-6xl font-bold text-white">
+                <div className="space-y-4 mt-16">
+                  <h2 className="text-4xl sm:text-6xl font-bold text-gray-900">
                     Hey, I'm{" "}
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
                       Vipul Kumar
                     </span>
                   </h2>
-                  <p className="text-lg sm:text-xl text-zinc-400 leading-relaxed">
+                  <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
                     Building innovative web applications with a focus on detail,
                     scalability, and performance. Passionate about creating
                     seamless user experiences.
@@ -323,7 +323,7 @@ export default function Portfolio3D() {
                         href={url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-zinc-400 justify-center hover:text-white cursor-pointer transform hover:scale-125 transition-all duration-300"
+                        className="text-gray-600 justify-center hover:text-black cursor-pointer transform hover:scale-125 transition-all duration-300"
                       >
                         <Icon size={24} />
                       </a>
@@ -340,29 +340,46 @@ export default function Portfolio3D() {
         </section>
 
         <section>
-          <div className="bg-zinc-950/50 rounded-2xl p-12 border border-zinc-800/50 backdrop-blur-sm">
-            <h3 className="text-4xl sm:text-5xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
-              Tech Stack
-            </h3>
-            <div className="flex flex-wrap gap-4 mb-12">
-              {Object.keys(techStack).map((tab) => (
-                <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  className={`px-8 py-3 rounded-xl transition-all duration-300 transform hover:scale-105 ${
-                    activeTab === tab
-                      ? "bg-gradient-to-r from-blue-500 to-purple-500 text-white"
-                      : "bg-zinc-900/50 text-zinc-400 hover:bg-zinc-800/50"
-                  }`}
-                >
-                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
-                </button>
-              ))}
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-              {techStack[activeTab].map((tech, index) => (
-                <TechCard key={tech} tech={tech} index={index} />
-              ))}
+          <div className=" rounded-2xl p-12">
+            <div className="flex flex-col lg:flex-row gap-12">
+              <div className="w-full lg:w-1/3 space-y-6">
+                <h2 className="text-4xl font-semibold text-gray-900">
+                  Technologies
+                </h2>
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                  Over time, I have worked on an array of web development
+                  frameworks, tools, and libraries to enhance user experience
+                  and deliver scalable solutions.
+                </p>
+                <div className="flex gap-4 sm:gap-6 items-center">
+                  <button
+                    onClick={() => setActiveTab("web")}
+                    className={`py-2 px-4 sm:py-3 sm:px-6 ${
+                      activeTab === "web"
+                        ? "bg-gradient-to-r from-blue-500 to-purple-500 text-white"
+                        : "bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-black"
+                    } rounded-full shadow-lg transition-all duration-300`}
+                  >
+                    Web Stack
+                  </button>
+                  <button
+                    onClick={() => setActiveTab("tools")}
+                    className={`py-2 px-4 sm:py-3 sm:px-6 ${
+                      activeTab === "tools"
+                        ? "bg-gradient-to-r from-blue-500 to-purple-500 text-white"
+                        : "bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-black"
+                    } rounded-full shadow-lg transition-all duration-300`}
+                  >
+                    Tools
+                  </button>
+                </div>
+              </div>
+
+              <div className="w-full lg:w-2/3 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+                {techStack[activeTab].map((tech, index) => (
+                  <TechCard key={tech} tech={tech} index={index} />
+                ))}
+              </div>
             </div>
           </div>
         </section>

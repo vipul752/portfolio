@@ -7,7 +7,7 @@ import youtube from "/Users/vipulkumar/Desktop/frontend/portfolio ✅/portfolio/
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Text, Center } from "@react-three/drei";
 import wanderlust from "/Users/vipulkumar/Desktop/frontend/portfolio ✅/portfolio/src/photos/wanderlust2.jpeg";
-import { Github, Send, User, Mail, MessageSquare } from "lucide-react";
+import { Github, Send } from "lucide-react";
 
 // Animated box component for project cards
 const AnimatedBox = ({ position, rotation }) => {
@@ -43,7 +43,7 @@ const AnimatedTitle = ({ text }) => {
     <group ref={groupRef}>
       <Center>
         <Text
-          fontSize={3}
+          fontSize={4}
           maxWidth={200}
           lineHeight={1}
           letterSpacing={0.02}
@@ -93,7 +93,7 @@ const projects = [
 const ProjectCard = ({ project, index }) => {
   return (
     <div
-      className="bg-black/50 rounded-xl overflow-hidden backdrop-blur-sm border border-zinc-800/50 group hover:border-zinc-700 transition-all duration-500 transform hover:-translate-y-2"
+      className="rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
       style={{
         animationDelay: `${index * 100}ms`,
       }}
@@ -105,12 +105,12 @@ const ProjectCard = ({ project, index }) => {
           className="w-full h-48 md:h-60 lg:h-72 rounded-lg object-cover transform group-hover:scale-105 transition-transform duration-500"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
           <a
             href={project.githubLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-white bg-zinc-800/80 px-4 py-2 rounded-full backdrop-blur-sm hover:bg-zinc-700 transition-colors duration-300"
+            className="flex items-center gap-2 text-white bg-zinc-900/70 px-4 py-2 rounded-full backdrop-blur-sm hover:bg-zinc-700 transition-colors duration-300"
           >
             <Github size={18} />
             View Code
@@ -118,7 +118,7 @@ const ProjectCard = ({ project, index }) => {
         </div>
       </div>
       <div className="p-6">
-        <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-white mb-2">
+        <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-800 mb-2">
           {project.title}
         </h3>
 
@@ -126,7 +126,7 @@ const ProjectCard = ({ project, index }) => {
           {project.techStack.split(",").map((tech, i) => (
             <span
               key={i}
-              className="text-xs px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20"
+              className="text-xs px-3 py-1 rounded-full bg-blue-100 text-blue-600 border border-blue-500/20"
             >
               {tech.trim()}
             </span>
@@ -139,10 +139,7 @@ const ProjectCard = ({ project, index }) => {
 
 const Project = () => {
   return (
-    <section
-      className="py-24 px-8 bg-black relative overflow-hidden"
-      id="projects"
-    >
+    <section className="py-24 px-8 relative overflow-hidden" id="projects">
       <div className="absolute inset-0">
         <Canvas
           camera={{ position: [0, 0, 5] }}
@@ -183,7 +180,6 @@ const Project = () => {
     </section>
   );
 };
-
 const Contact = () => {
   const form = useRef();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -218,7 +214,7 @@ const Contact = () => {
 
   return (
     <section
-      className="py-24 px-8 bg-black relative overflow-hidden"
+      className="py-16 px-4 sm:px-8 lg:py-24 lg:px-16 relative overflow-hidden"
       id="contact"
     >
       <div className="absolute inset-0">
@@ -240,11 +236,11 @@ const Contact = () => {
         </Canvas>
       </div>
 
-      <div className=" mx-auto relative max-w-7xl  " >
-        <div className="bg-black/50 rounded-2xl p-8 md:p-12 border border-zinc-800/50 backdrop-blur-sm">
-          <div className="grid md:grid-cols-2 gap-12 items-center justify-center">
-            <div className="space-y-6">
-              <div className="h-20">
+      <div className="mx-auto relative max-w-7xl">
+        <div className="rounded-2xl p-6 sm:p-8 lg:p-12  ">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="space-y-6 text-center md:text-left">
+              <div className="h-20 mx-auto md:mx-0">
                 <Canvas camera={{ position: [0, 0, 5] }}>
                   <ambientLight intensity={0.5} />
                   <pointLight position={[10, 10, 10]} />
@@ -252,52 +248,43 @@ const Contact = () => {
                   <OrbitControls enableZoom={false} />
                 </Canvas>
               </div>
-              
 
               <div className="relative">
                 <img
                   src="https://dhruv-portfolio-mu.vercel.app/contact.png"
                   alt="Contact illustration"
-                  className="w-full max-w-md mx-auto transform hover:scale-105 transition-transform duration-500"
+                  className="w-3/4 md:w-full mx-auto transform hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent bottom-0 opacity-50" />
+                <div className="absolute inset-0 bottom-0 opacity-50" />
               </div>
             </div>
-            <form ref={form} onSubmit={sendEmail} className="justify-between items-center space-y-3">
-              <div className="relative">
-                <input
-                  type="text"
-                  name="user_name"
-                  placeholder="Your Name"
-                  required
-                  className="w-full bg-zinc-900/50 text-white rounded-xl border border-zinc-800/50 p-3 focus:outline-none focus:border-blue-500/50 transition-colors duration-300 placeholder:text-zinc-500"
-                />
-              </div>
 
-              <div className="relative">
-                <input
-                  type="email"
-                  name="user_email"
-                  placeholder="Your Email"
-                  required
-                  className="w-full bg-zinc-900/50 text-white rounded-xl border border-zinc-800/50 p-3 focus:outline-none focus:border-blue-500/50 transition-colors duration-300 placeholder:text-zinc-500"
-                />
-              </div>
-
-              <div className="relative">
-                <textarea
-                  name="message"
-                  rows="4"
-                  placeholder="Your Message"
-                  required
-                  className="w-full bg-zinc-900/50 text-white rounded-xl border border-zinc-800/50 p-3 focus:outline-none focus:border-blue-500/50 transition-colors duration-300 placeholder:text-zinc-500"
-                />
-              </div>
-
+            <form ref={form} onSubmit={sendEmail} className="space-y-4">
+              <input
+                type="text"
+                name="user_name"
+                placeholder="Your Name"
+                required
+                className="w-full text-gray-900 rounded-xl border p-3 focus:outline-none focus:border-blue-500/50 transition-colors duration-300 placeholder:text-gray-500"
+              />
+              <input
+                type="email"
+                name="user_email"
+                placeholder="Your Email"
+                required
+                className="w-full text-gray-900 rounded-xl border p-3 focus:outline-none focus:border-blue-500/50 transition-colors duration-300 placeholder:text-gray-500"
+              />
+              <textarea
+                name="message"
+                rows="4"
+                placeholder="Your Message"
+                required
+                className="w-full text-gray-900 rounded-xl border p-3 focus:outline-none focus:border-blue-500/50 transition-colors duration-300 placeholder:text-gray-500"
+              />
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white py-3 px-6 rounded-xl flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full md:w-auto bg-gradient-to-r from-blue-500 to-purple-500 text-white py-3 px-6 rounded-xl flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   "Sending..."
@@ -323,7 +310,7 @@ const Contact = () => {
         pauseOnFocusLoss
         draggable={false}
         pauseOnHover
-        theme="dark"
+        theme="light"
       />
     </section>
   );
