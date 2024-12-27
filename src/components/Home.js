@@ -190,12 +190,12 @@ const techIcons = {
 
 const TechCard = ({ tech, index }) => (
   <div
-    className="group bg-zinc-900/50 p-5 rounded-xl border border-zinc-800/50 hover:border-zinc-700 transition-all duration-500 transform hover:-translate-y-4"
+    className="group bg-zinc-900/50 p-4 rounded-3xl border border-zinc-800/50 hover:border-zinc-700 transition-all duration-500 transform hover:-translate-y-4"
     style={{
       animationDelay: `${index * 100}ms`,
     }}
   >
-    <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 bg-zinc-800 rounded-xl flex items-center justify-center">
+    <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 bg-zinc-800 rounded-2xl flex items-center justify-center">
       {techIcons[tech] || <Code size={24} />}
     </div>
     <p className="text-center font-medium text-zinc-400 group-hover:text-white transition-colors duration-300 text-sm sm:text-base lg:text-lg">
