@@ -4,6 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import emailjs from "@emailjs/browser";
 import swiggy from "/Users/vipulkumar/Desktop/frontend/portfolio ✅/portfolio/src/photos/swiggy.jpeg";
 import youtube from "/Users/vipulkumar/Desktop/frontend/portfolio ✅/portfolio/src/photos/youtube.jpeg";
+import leetcode from "/Users/vipulkumar/Desktop/frontend/portfolio ✅/portfolio/src/photos/leetcode.jpeg";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Text, Center } from "@react-three/drei";
 import wanderlust from "/Users/vipulkumar/Desktop/frontend/portfolio ✅/portfolio/src/photos/wanderlust2.jpeg";
@@ -83,10 +84,10 @@ const projects = [
     githubLink: "https://github.com/vipul752/voting-app",
   },
   {
-    title: "Wanderlust",
-    image: wanderlust,
-    techStack: "Ejs, NodeJs, MongoDB",
-    githubLink: "https://github.com/sachin97581/WandreLust",
+    title: "vitecode",
+    techStack: "React, NodeJs, MongoDB,ExpressJs,Redux,Jugde0,MonacoEditor",
+    image: leetcode,
+    githubLink: "https://github.com/vipul752/leetcode-frontend",
   },
 ];
 
