@@ -1,20 +1,20 @@
 import "./App.css";
+import Hero from "./components/Hero";
+import TechStack from "./components/TechStack";
+import Projects from "./components/Projects";
 import Experience from "./components/Experience";
+import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-
-import Home from "./components/Home";
-import Project from "./components/Project";
-import { Contact } from "./components/Project";
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-
-      <Project />
+    <div className="App bg-gray-950 text-white">
+      <Hero />
+      <TechStack />
+      <Projects />
       <Experience />
       <Contact />
-      <Footer/>
+      <Footer />
     </div>
   );
 }
