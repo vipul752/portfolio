@@ -1,9 +1,54 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useCallback } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { Send, Mail, Linkedin, Github } from "lucide-react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+// Memoized Input Field Component
+const InputField = React.memo(
+  ({
+    label,
+    name,
+    type = "text",
+    placeholder,
+    multiline = false,
+    delay,
+    value,
+    onChange,
+  }) => (
+    <motion.div
+      className="space-y-2"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay, duration: 0.6 }}
+      viewport={{ once: true }}
+    >
+      <label className="text-sm font-semibold text-gray-200">{label}</label>
+      {multiline ? (
+        <textarea
+          name={name}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+          rows="5"
+          className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-blue-500/50 focus:bg-white/10 focus:outline-none transition-all duration-300 resize-none"
+        />
+      ) : (
+        <input
+          type={type}
+          name={name}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+          className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-blue-500/50 focus:bg-white/10 focus:outline-none transition-all duration-300"
+        />
+      )}
+    </motion.div>
+  )
+);
+
+InputField.displayName = "InputField";
 
 const ContactSection = () => {
   const form = useRef();
@@ -14,10 +59,10 @@ const ContactSection = () => {
     message: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = useCallback((e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+  }, []);
 
   const sendEmail = async (e) => {
     e.preventDefault();
@@ -46,10 +91,10 @@ const ContactSection = () => {
 
     try {
       await emailjs.sendForm(
-        process.env.REACT_APP_SERVICE_ID || "service_placeholder",
-        process.env.REACT_APP_TEMPLATE_ID || "template_placeholder",
+        process.env.REACT_APP_SERVICE_ID || "service_4myfzwk",
+        process.env.REACT_APP_TEMPLATE_ID || "template_1qpmm0l",
         form.current,
-        process.env.REACT_APP_PUBLIC_KEY || "public_key_placeholder"
+        process.env.REACT_APP_PUBLIC_KEY || "QJQYkebsPCG96zFxc"
       );
 
       toast.success("Message sent successfully! 🎉", {
@@ -76,44 +121,6 @@ const ContactSection = () => {
     },
     { icon: Mail, label: "Email", url: "mailto:your.email@example.com" },
   ];
-
-  const InputField = ({
-    label,
-    name,
-    type = "text",
-    placeholder,
-    multiline = false,
-    delay,
-  }) => (
-    <motion.div
-      className="space-y-2"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay, duration: 0.6 }}
-      viewport={{ once: true }}
-    >
-      <label className="text-sm font-semibold text-gray-200">{label}</label>
-      {multiline ? (
-        <textarea
-          name={name}
-          placeholder={placeholder}
-          value={formData[name]}
-          onChange={handleChange}
-          rows="5"
-          className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-blue-500/50 focus:bg-white/10 focus:outline-none transition-all duration-300 resize-none"
-        />
-      ) : (
-        <input
-          type={type}
-          name={name}
-          placeholder={placeholder}
-          value={formData[name]}
-          onChange={handleChange}
-          className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-blue-500/50 focus:bg-white/10 focus:outline-none transition-all duration-300"
-        />
-      )}
-    </motion.div>
-  );
 
   return (
     <section
@@ -207,6 +214,8 @@ const ContactSection = () => {
                 name="user_name"
                 placeholder="John Doe"
                 delay={0.3}
+                value={formData.user_name}
+                onChange={handleChange}
               />
               <InputField
                 label="Your Email"
@@ -214,6 +223,8 @@ const ContactSection = () => {
                 type="email"
                 placeholder="john@example.com"
                 delay={0.35}
+                value={formData.user_email}
+                onChange={handleChange}
               />
             </div>
 
@@ -223,6 +234,8 @@ const ContactSection = () => {
               placeholder="Tell me about your project..."
               multiline
               delay={0.4}
+              value={formData.message}
+              onChange={handleChange}
             />
 
             {/* Submit Button */}
