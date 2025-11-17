@@ -64,36 +64,36 @@ const ExperienceSection = () => {
         viewport={{ once: true }}
         className="group"
       >
-        <div className="relative p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-white/30 transition-all duration-300 hover:bg-white/10">
+        <div className="relative p-6 rounded-2xl bg-white/80 backdrop-blur-lg border border-gray-300/50 group-hover:border-gray-400/70 transition-all duration-300 hover:bg-white/90 shadow-md hover:shadow-lg">
           {/* Icon */}
           <motion.div
-            className={`w-14 h-14 rounded-xl bg-gradient-to-br ${edu.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
-            whileHover={{ rotate: 10 }}
+            className={`w-14 h-14 rounded-xl bg-gradient-to-br ${edu.gradient} flex items-center justify-center mb-4 group-hover:scale-120 transition-transform duration-300 text-white shadow-md`}
+            whileHover={{ rotate: 15 }}
           >
             <Icon size={24} />
           </motion.div>
 
           {/* Content */}
-          <h3 className="text-lg md:text-xl font-bold text-white mb-1">
+          <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-1">
             {edu.school}
           </h3>
-          <p className="text-sm text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 font-semibold mb-1">
+          <p className="text-sm text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 font-semibold mb-1">
             {edu.degree}
           </p>
-          <p className="text-xs text-gray-400 mb-4">{edu.duration}</p>
+          <p className="text-xs text-gray-600 mb-4">{edu.duration}</p>
 
           {/* Details */}
           <ul className="space-y-2">
             {edu.details.map((detail, idx) => (
               <motion.li
                 key={idx}
-                className="text-sm text-gray-300 flex items-start gap-2"
+                className="text-sm text-gray-700 flex items-start gap-2"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.1 + idx * 0.1 }}
                 viewport={{ once: true }}
               >
-                <span className="text-blue-400 mt-1">•</span>
+                <span className="text-blue-600 mt-1 font-bold">•</span>
                 <span>{detail}</span>
               </motion.li>
             ))}
@@ -101,7 +101,7 @@ const ExperienceSection = () => {
 
           {/* Bottom Border Animation */}
           <motion.div
-            className={`absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r ${edu.gradient} rounded-full`}
+            className={`absolute bottom-0 left-0 h-1.5 w-0 bg-gradient-to-r ${edu.gradient} rounded-full`}
             whileInView={{ width: "100%" }}
             transition={{ delay: 0.3, duration: 0.6 }}
             viewport={{ once: true }}
@@ -114,11 +114,11 @@ const ExperienceSection = () => {
   return (
     <section
       id="experience"
-      className="relative py-24 px-8 bg-gradient-to-b from-gray-950 to-gray-900 overflow-hidden"
+      className="relative py-24 px-8 bg-gradient-to-b from-white to-purple-50/40 overflow-hidden"
     >
       {/* Background Animations */}
       <motion.div
-        className="absolute top-0 left-0 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"
+        className="absolute top-0 left-0 w-80 h-80 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-8"
         animate={{ y: [0, 50, 0] }}
         transition={{ duration: 7, repeat: Infinity }}
       />
@@ -132,10 +132,10 @@ const ExperienceSection = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Education & Timeline
           </h2>
-          <p className="text-gray-300 text-lg max-w-2xl">
+          <p className="text-gray-700 text-lg max-w-2xl">
             My academic journey and key milestones in software development.
           </p>
         </motion.div>
@@ -155,7 +155,7 @@ const ExperienceSection = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl font-bold text-white mb-8">Journey</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mb-8">Journey</h3>
           <div className="space-y-6">
             {timeline.map((item, idx) => (
               <motion.div
@@ -168,7 +168,7 @@ const ExperienceSection = () => {
               >
                 {/* Year */}
                 <motion.div
-                  className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 min-w-20"
+                  className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 min-w-20"
                   whileHover={{ scale: 1.1 }}
                 >
                   {item.year}
@@ -177,16 +177,16 @@ const ExperienceSection = () => {
                 {/* Timeline Line */}
                 <div className="relative pt-2">
                   <motion.div
-                    className="absolute -left-3.5 w-3 h-3 rounded-full bg-gradient-to-r from-blue-400 to-purple-400"
+                    className="absolute -left-3.5 w-3 h-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     transition={{ delay: 0.2 + idx * 0.1 }}
                     viewport={{ once: true }}
                   />
                   {idx !== timeline.length - 1 && (
-                    <div className="absolute -left-3 w-0.5 h-12 bg-gradient-to-b from-white/20 to-white/0" />
+                    <div className="absolute -left-3 w-0.5 h-12 bg-gradient-to-b from-gray-300/40 to-gray-300/0" />
                   )}
-                  <p className="text-gray-300">{item.event}</p>
+                  <p className="text-gray-700">{item.event}</p>
                 </div>
               </motion.div>
             ))}
@@ -200,31 +200,34 @@ const ExperienceSection = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl font-bold text-white mb-8">Skills</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mb-8">Skills</h3>
           <div className="grid md:grid-cols-2 gap-6">
             {skills.map((skillGroup, idx) => (
               <motion.div
                 key={idx}
-                className="p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-white/30 transition-all duration-300 hover:bg-white/10"
+                className="p-6 rounded-2xl bg-white/80 backdrop-blur-lg border border-gray-300/50 hover:border-gray-400/70 transition-all duration-300 hover:bg-white/90"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1, duration: 0.6 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -8 }}
+                whileHover={{
+                  y: -10,
+                  boxShadow: "0 20px 40px rgba(0,0,0,0.08)",
+                }}
               >
-                <h4 className="font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 mb-4">
+                <h4 className="font-bold text-lg text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-4">
                   {skillGroup.category}
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {skillGroup.skills.map((skill, sIdx) => (
                     <motion.span
                       key={sIdx}
-                      className="px-3 py-1 text-sm rounded-full bg-white/10 border border-white/20 hover:bg-white/20 transition-all duration-300"
+                      className="px-3 py-1 text-sm rounded-full bg-white/70 border border-gray-300/60 hover:bg-white/90 transition-all duration-300 text-gray-800 shadow-sm"
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 0.1 + sIdx * 0.05 }}
                       viewport={{ once: true }}
-                      whileHover={{ scale: 1.05 }}
+                      whileHover={{ scale: 1.08 }}
                     >
                       {skill}
                     </motion.span>

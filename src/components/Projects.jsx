@@ -61,9 +61,9 @@ const ProjectsSection = () => {
         viewport={{ once: true }}
         className="group relative h-full"
       >
-        <div className="relative h-full rounded-2xl overflow-hidden bg-white/5 backdrop-blur-md border border-white/10 group-hover:border-white/30 transition-all duration-300">
+        <div className="relative h-full rounded-xl overflow-hidden bg-white/50 backdrop-blur-md border border-slate-200/60 group-hover:border-purple-300/80 transition-all duration-300 shadow-sm hover:shadow-lg">
           {/* Image Container */}
-          <div className="relative h-56 md:h-64 overflow-hidden bg-gray-900">
+          <div className="relative h-56 md:h-64 overflow-hidden bg-slate-200">
             <img
               src={project.image}
               alt={project.title}
@@ -71,7 +71,7 @@ const ProjectsSection = () => {
             />
 
             {/* Overlay Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-gray-900 group-hover:opacity-100 opacity-60 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-900/20 group-hover:opacity-100 opacity-30 transition-opacity duration-300" />
 
             {/* Action Buttons - Slide In (CSS based) */}
             <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -79,7 +79,7 @@ const ProjectsSection = () => {
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-white/20 backdrop-blur-md hover:bg-white/30 transition-all duration-300"
+                className="p-3 rounded-full bg-white/40 backdrop-blur-md hover:bg-white/70 transition-all duration-300 text-slate-900"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -87,7 +87,7 @@ const ProjectsSection = () => {
               </motion.a>
               <motion.a
                 href={project.demo}
-                className="p-3 rounded-full bg-white/20 backdrop-blur-md hover:bg-white/30 transition-all duration-300"
+                className="p-3 rounded-full bg-white/40 backdrop-blur-md hover:bg-white/70 transition-all duration-300 text-slate-900"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -100,10 +100,10 @@ const ProjectsSection = () => {
           <div className="p-6 space-y-4">
             {/* Title & Description */}
             <div>
-              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 transition-all duration-300">
+              <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-pink-600 transition-all duration-300">
                 {project.title}
               </h3>
-              <p className="text-gray-300 text-sm leading-relaxed">
+              <p className="text-slate-600 text-sm leading-relaxed">
                 {project.description}
               </p>
             </div>
@@ -113,7 +113,7 @@ const ProjectsSection = () => {
               {project.technologies.map((tech, idx) => (
                 <motion.span
                   key={idx}
-                  className="px-3 py-1 text-xs font-medium rounded-full bg-white/10 border border-white/20 hover:bg-white/20 transition-all duration-300"
+                  className="px-2 py-1 text-xs font-medium rounded-md bg-white/60 border border-slate-300/50 hover:bg-white/80 transition-all duration-300 text-slate-800"
                   whileHover={{ scale: 1.05 }}
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -127,7 +127,7 @@ const ProjectsSection = () => {
 
             {/* Bottom Border Animation */}
             <div
-              className={`h-1 w-0 bg-gradient-to-r ${project.gradient} rounded-full group-hover:w-full transition-all duration-300`}
+              className={`h-0.5 w-0 bg-gradient-to-r ${project.gradient} rounded-full group-hover:w-full transition-all duration-300`}
             />
           </div>
         </div>
@@ -138,38 +138,38 @@ const ProjectsSection = () => {
   return (
     <section
       id="projects"
-      className="relative py-24 px-8 bg-gradient-to-b from-gray-900 to-gray-950 overflow-hidden"
+      className="relative py-32 px-8 bg-gradient-to-b from-blue-50/40 via-white to-slate-50 overflow-hidden"
     >
-      {/* Background Animations */}
+      {/* Background Decorative Elements */}
       <motion.div
-        className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"
-        animate={{ x: [0, 50, 0] }}
-        transition={{ duration: 8, repeat: Infinity }}
+        className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-indigo-200/30 to-transparent rounded-full blur-3xl"
+        animate={{ x: [0, 60, 0] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"
-        animate={{ x: [0, -50, 0] }}
-        transition={{ duration: 8, repeat: Infinity }}
+        className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-purple-200/20 to-transparent rounded-full blur-3xl"
+        animate={{ x: [0, -60, 0] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
         <motion.div
-          className="mb-16"
+          className="mb-20"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="flex items-center gap-4 mb-4">
-            <div className="h-12 w-1 rounded-full bg-gradient-to-b from-blue-400 to-purple-400" />
-            <h2 className="text-4xl md:text-5xl font-bold text-white">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="h-1 w-12 rounded-full bg-gradient-to-r from-purple-600 to-pink-600" />
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900">
               Featured Projects
             </h2>
           </div>
-          <p className="text-gray-300 text-lg max-w-2xl mt-4">
-            Showcase of my best work demonstrating expertise in full-stack
-            development, scalable architecture, and modern web technologies.
+          <p className="text-slate-600 text-lg max-w-2xl leading-relaxed">
+            A selection of projects that showcase my experience in full-stack
+            development, problem-solving, and attention to detail.
           </p>
         </motion.div>
 
@@ -182,7 +182,7 @@ const ProjectsSection = () => {
 
         {/* View All Projects CTA */}
         <motion.div
-          className="mt-16 text-center"
+          className="mt-20 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
@@ -192,13 +192,13 @@ const ProjectsSection = () => {
             href="https://github.com/vipul752"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
+            className="group inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 hover:shadow-lg hover:shadow-purple-400/30 transition-all duration-300 text-white font-semibold text-sm"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            View All Projects on GitHub
+            Explore More on GitHub
             <ArrowRight
-              size={18}
+              size={16}
               className="group-hover:translate-x-1 transition-transform"
             />
           </motion.a>

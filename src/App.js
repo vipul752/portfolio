@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="App bg-gray-950 text-white">
+    <div className="App theme-light bg-white text-gray-900">
       <Hero />
       <TechStack />
       <Projects />

@@ -6,9 +6,79 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Light theme styles and utility overrides under .theme-light */
 body {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
   overflow-x: hidden;
+}
+
+.theme-light {
+  background: linear-gradient(180deg, #ffffff 0%, #f7fafc 100%);
+  color: #0f172a; /* gray-900 */
+}
+
+/* Utility overrides to map dark-tailwind classes to light equivalents when .theme-light is present */
+.theme-light .bg-gray-950 {
+  background-color: #ffffff !important;
+}
+.theme-light .bg-gray-900 {
+  background-color: #f8fafc !important;
+}
+.theme-light .text-white {
+  color: #0f172a !important;
+}
+.theme-light .text-gray-300 {
+  color: #475569 !important;
+}
+.theme-light .text-gray-400 {
+  color: #64748b !important;
+}
+.theme-light .bg-white\/5 {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+.theme-light .bg-white\/10 {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+.theme-light .border-white\/10 {
+  border-color: rgba(15, 23, 42, 0.06) !important;
+}
+.theme-light .border-white\/20 {
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+.theme-light .border-white\/30 {
+  border-color: rgba(15, 23, 42, 0.12) !important;
+}
+.theme-light .backdrop-blur-md {
+  background-color: rgba(255, 255, 255, 0.7) !important;
+}
+.theme-light .shadow-2xl {
+  box-shadow: 0 20px 40px rgba(2, 6, 23, 0.06) !important;
+}
+.theme-light .shadow-3xl {
+  box-shadow: 0 30px 60px rgba(2, 6, 23, 0.06) !important;
+}
+.theme-light .bg-black\/30 {
+  background-color: rgba(255, 255, 255, 0.6) !important;
+}
+.theme-light .bg-gradient-to-br {
+  /* subtle pastel gradient for light theme */
+}
+
+/* Scrollbar for light theme */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #c7d2fe, #fbcfe8);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #a5b4fc, #fda4af);
 }
 
 ::-webkit-scrollbar {

@@ -63,28 +63,30 @@ const TechStackSection = () => {
         viewport={{ once: true }}
       >
         {/* Glassmorphism Card */}
-        <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 group-hover:border-white/30 group-hover:bg-white/10 transition-all duration-300 cursor-pointer h-full">
+        {/* Glassmorphism Card */}
+        {/* Glassmorphism Card */}
+        <div className="p-5 rounded-xl bg-white/50 backdrop-blur-md border border-slate-200/60 group-hover:border-purple-300/80 group-hover:bg-white/70 transition-all duration-300 cursor-pointer h-full shadow-sm hover:shadow-md">
           {/* Icon Container */}
           <div className="mb-4 relative">
-            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-slate-100 to-slate-50 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
               <Icon
-                size={32}
+                size={28}
                 style={{ color: tech.color }}
                 className="group-hover:rotate-360 transition-transform duration-500"
               />
             </div>
 
             {/* Glow Effect - CSS based */}
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/30 group-hover:to-purple-500/30 blur-lg -z-10 group-hover:blur-lg transition-all duration-300" />
+            <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-purple-300/0 to-pink-300/0 group-hover:from-purple-300/15 group-hover:to-pink-300/15 blur-lg -z-10 group-hover:blur-lg transition-all duration-300" />
           </div>
 
           {/* Tech Name */}
-          <h3 className="font-semibold text-sm md:text-base text-gray-100 group-hover:text-white transition-colors duration-300">
+          <h3 className="font-semibold text-sm md:text-base text-slate-800 group-hover:text-slate-900 transition-colors duration-300">
             {tech.name}
           </h3>
 
           {/* Hover Effect Bottom Border - CSS based */}
-          <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full group-hover:w-full transition-all duration-300" />
+          <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full group-hover:w-full transition-all duration-300" />
         </div>
       </motion.div>
     );
@@ -99,7 +101,7 @@ const TechStackSection = () => {
       className="mb-12"
     >
       <motion.h3
-        className="text-xl md:text-2xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400"
+        className="text-2xl md:text-3xl font-bold mb-8 text-slate-900"
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
@@ -118,30 +120,30 @@ const TechStackSection = () => {
   return (
     <section
       id="tech"
-      className="relative py-24 px-8 bg-gradient-to-b from-gray-950 to-gray-900 overflow-hidden"
+      className="relative py-32 px-8 bg-gradient-to-b from-slate-50 via-white to-blue-50/30 overflow-hidden"
     >
-      {/* Background Blur */}
+      {/* Background Decorative Elements */}
       <motion.div
-        className="absolute top-0 right-0 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"
-        animate={{ y: [0, 50, 0] }}
-        transition={{ duration: 8, repeat: Infinity }}
+        className="absolute top-20 right-0 w-72 h-72 bg-gradient-to-br from-purple-200/40 to-transparent rounded-full blur-3xl"
+        animate={{ y: [0, 40, 0] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
         <motion.div
-          className="mb-16"
+          className="mb-20"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">
             Tech Stack
           </h2>
-          <p className="text-gray-300 text-lg max-w-2xl">
-            Specialized in building scalable, high-performance applications with
-            modern technologies and best practices.
+          <p className="text-slate-600 text-lg max-w-2xl leading-relaxed">
+            I work with modern technologies and tools to build scalable,
+            maintainable applications. Constantly learning and improving.
           </p>
         </motion.div>
 

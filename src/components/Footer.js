@@ -20,7 +20,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative py-16 px-8 bg-gradient-to-b from-gray-950 to-black border-t border-white/10 overflow-hidden">
+    <footer className="relative py-16 px-8 bg-gradient-to-b from-white via-slate-50 to-slate-100 border-t border-slate-300/30 overflow-hidden">
       {/* Background Glow */}
       <motion.div
         className="absolute inset-0 pointer-events-none"
@@ -29,13 +29,13 @@ const Footer = () => {
         transition={{ duration: 1 }}
         viewport={{ once: true }}
       >
-        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-gradient-to-t from-blue-500/10 to-transparent rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-gradient-to-t from-purple-200/8 to-transparent rounded-full blur-3xl" />
       </motion.div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Top Section */}
         <motion.div
-          className="flex flex-col md:flex-row justify-between items-center gap-8 pb-8 border-b border-white/10"
+          className="flex flex-col md:flex-row justify-between items-center gap-8 pb-8 border-b border-slate-300/30"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -49,11 +49,11 @@ const Footer = () => {
             transition={{ delay: 0.1, duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 mb-2">
+            <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 mb-2">
               Vipul Kumar
             </h2>
-            <p className="text-gray-400 text-sm">
-              Full-Stack Developer | Building Digital Experiences
+            <p className="text-slate-700 text-sm">
+              Full-Stack Developer | Building amazing web experiences
             </p>
           </motion.div>
 
@@ -74,7 +74,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   title={link.label}
-                  className="p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/30 transition-all duration-300"
+                  className="p-3 rounded-full bg-white/70 border border-slate-300/50 hover:bg-white/90 hover:border-slate-400/70 transition-all duration-300 text-slate-900 shadow-sm hover:shadow-md"
                   whileHover={{ scale: 1.15, y: -5 }}
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0, scale: 0 }}
@@ -91,7 +91,7 @@ const Footer = () => {
           {/* Scroll to Top */}
           <motion.button
             onClick={scrollToTop}
-            className="p-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
+            className="p-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 text-white shadow-md"
             whileHover={{ scale: 1.15, y: -5 }}
             whileTap={{ scale: 0.95 }}
             initial={{ opacity: 0, scale: 0 }}
@@ -115,44 +115,44 @@ const Footer = () => {
           <div className="flex flex-wrap justify-center gap-6 text-sm">
             <a
               href="#projects"
-              className="text-gray-400 hover:text-white transition-colors"
+              className="text-slate-700 hover:text-slate-900 transition-colors font-medium"
             >
               Projects
             </a>
             <a
               href="#contact"
-              className="text-gray-400 hover:text-white transition-colors"
+              className="text-slate-700 hover:text-slate-900 transition-colors font-medium"
             >
               Contact
             </a>
             <a
               href="#tech"
-              className="text-gray-400 hover:text-white transition-colors"
+              className="text-slate-700 hover:text-slate-900 transition-colors font-medium"
             >
               Tech Stack
             </a>
             <a
               href="#experience"
-              className="text-gray-400 hover:text-white transition-colors"
+              className="text-slate-700 hover:text-slate-900 transition-colors font-medium"
             >
               Experience
             </a>
           </div>
 
           {/* Copyright */}
-          <p className="text-xs text-gray-500">
-            © {currentYear} Vipul Kumar. All rights reserved. | Crafted with ✨
-            and ❤️
+          <p className="text-xs text-slate-600">
+            © {currentYear} Vipul Kumar. All rights reserved. | Crafted with
+            passion ✨
           </p>
 
           {/* Status */}
           <motion.div
-            className="flex items-center justify-center gap-2 text-xs text-gray-400"
-            animate={{ opacity: [0.5, 1, 0.5] }}
-            transition={{ duration: 2, repeat: Infinity }}
+            className="flex items-center justify-center gap-2 text-xs text-slate-700"
+            animate={{ opacity: [0.6, 1, 0.6] }}
+            transition={{ duration: 2.5, repeat: Infinity }}
           >
-            <span className="w-2 h-2 bg-green-500 rounded-full" />
-            <span>Open for opportunities</span>
+            <span className="w-2 h-2 bg-emerald-500 rounded-full" />
+            <span>Open for new opportunities</span>
           </motion.div>
         </motion.div>
       </div>

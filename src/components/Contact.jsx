@@ -24,7 +24,7 @@ const InputField = React.memo(
       transition={{ delay, duration: 0.6 }}
       viewport={{ once: true }}
     >
-      <label className="text-sm font-semibold text-gray-200">{label}</label>
+      <label className="text-sm font-semibold text-gray-800">{label}</label>
       {multiline ? (
         <textarea
           name={name}
@@ -32,7 +32,7 @@ const InputField = React.memo(
           value={value}
           onChange={onChange}
           rows="5"
-          className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-blue-500/50 focus:bg-white/10 focus:outline-none transition-all duration-300 resize-none"
+          className="w-full px-4 py-3 rounded-xl bg-white/70 border border-gray-300/60 text-gray-900 placeholder-gray-500 focus:border-blue-500/60 focus:bg-white/85 focus:outline-none transition-all duration-300 resize-none shadow-sm"
         />
       ) : (
         <input
@@ -41,7 +41,7 @@ const InputField = React.memo(
           placeholder={placeholder}
           value={value}
           onChange={onChange}
-          className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-blue-500/50 focus:bg-white/10 focus:outline-none transition-all duration-300"
+          className="w-full px-4 py-3 rounded-xl bg-white/70 border border-gray-300/60 text-gray-900 placeholder-gray-500 focus:border-blue-500/60 focus:bg-white/85 focus:outline-none transition-all duration-300 shadow-sm"
         />
       )}
     </motion.div>
@@ -125,18 +125,18 @@ const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="relative py-24 px-8 bg-gradient-to-b from-gray-900 to-gray-950 overflow-hidden"
+      className="relative py-32 px-8 bg-gradient-to-b from-slate-50 via-white to-purple-50/60 overflow-hidden"
     >
       {/* Background Animations */}
       <motion.div
-        className="absolute -top-40 -left-40 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"
+        className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-indigo-200/25 to-transparent rounded-full blur-3xl"
         animate={{ x: [0, 50, 0] }}
-        transition={{ duration: 8, repeat: Infinity }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute -bottom-40 -right-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"
+        className="absolute -bottom-40 -right-40 w-80 h-80 bg-gradient-to-tr from-purple-200/20 to-transparent rounded-full blur-3xl"
         animate={{ x: [0, -50, 0] }}
-        transition={{ duration: 8, repeat: Infinity }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
 
       <div className="max-w-4xl mx-auto relative z-10">
@@ -148,10 +148,10 @@ const ContactSection = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Get In Touch
           </h2>
-          <p className="text-gray-300 text-lg">
+          <p className="text-gray-700 text-lg">
             Have a project in mind? Let's collaborate and build something
             amazing together.
           </p>
@@ -168,22 +168,27 @@ const ContactSection = () => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-white/30 transition-all duration-300 text-center"
+                className="group p-6 rounded-2xl bg-white/80 backdrop-blur-lg border border-gray-300/50 hover:border-gray-400/70 transition-all duration-300 text-center shadow-md hover:shadow-lg"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: idx * 0.1, duration: 0.6 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -8, backgroundColor: "rgba(255,255,255,0.1)" }}
+                whileHover={{
+                  y: -12,
+                  backgroundColor: "rgba(255,255,255,0.95)",
+                }}
               >
                 <motion.div
-                  className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform"
+                  className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center mx-auto mb-4 group-hover:scale-120 transition-transform shadow-md"
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}
                 >
                   <Icon size={24} className="text-white" />
                 </motion.div>
-                <h3 className="font-semibold text-white mb-1">{link.label}</h3>
-                <p className="text-sm text-gray-400 group-hover:text-gray-200 transition-colors">
+                <h3 className="font-semibold text-gray-900 mb-1 text-lg">
+                  {link.label}
+                </h3>
+                <p className="text-sm text-gray-600 group-hover:text-gray-800 transition-colors">
                   Get in touch
                 </p>
               </motion.a>
@@ -195,14 +200,14 @@ const ContactSection = () => {
         <motion.form
           ref={form}
           onSubmit={sendEmail}
-          className="p-8 md:p-10 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-white/20 transition-all duration-300"
+          className="p-8 md:p-10 rounded-2xl bg-white/80 backdrop-blur-lg border border-gray-300/50 hover:border-gray-400/60 transition-all duration-300 shadow-lg"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
           viewport={{ once: true }}
         >
           {/* Form Title */}
-          <h3 className="text-2xl font-bold text-white mb-8">
+          <h3 className="text-2xl font-bold text-gray-900 mb-8">
             Send me a message
           </h3>
 
@@ -249,11 +254,11 @@ const ContactSection = () => {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl font-semibold overflow-hidden hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl font-semibold text-white overflow-hidden hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <span className="relative flex items-center justify-center gap-2 text-white">
+                <span className="relative flex items-center justify-center gap-2">
                   {isSubmitting ? (
                     <>
                       <motion.div
@@ -279,7 +284,7 @@ const ContactSection = () => {
 
           {/* Form Info */}
           <motion.p
-            className="text-xs text-gray-400 text-center mt-4"
+            className="text-xs text-gray-600 text-center mt-4"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
@@ -301,7 +306,7 @@ const ContactSection = () => {
         pauseOnFocusLoss
         draggable={false}
         pauseOnHover
-        theme="dark"
+        theme="light"
       />
     </section>
   );
