@@ -1,23 +1,35 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Github, ExternalLink, ArrowRight } from "lucide-react";
+import CodeArena from "../photos/codeArena.png";
+import Dinemate from "../photos/swiggy.png";
 
 const ProjectsSection = () => {
   const projects = [
     {
       id: 1,
-      title: "Swiggy Clone",
+      title: "codeArena – AI Powered DSA Practice Platform",
       description:
-        "Full-stack food delivery platform with real-time order tracking",
-      image:
-        "https://images.unsplash.com/photo-1585521537688-73e9310aed44?w=500&h=300&fit=crop",
+        "An AI-powered competitive coding platform like LeetCode, featuring real-time code execution, 1v1 battles, contests, AI debugging, resume analysis, and a complete social system—built end-to-end using MERN, Socket.io, Judge0, and LLMs.",
+      image: CodeArena,
+      technologies: ["React", "Node.js", "MongoDB", "Monaco Editor"],
+      github: "https://github.com/vipul752/leetcode-frontend",
+      demo: "https://codearena.digital",
+      gradient: "from-purple-500 to-indigo-500",
+    },
+    {
+      id: 2,
+      title: "DineMate – Smart Food Ordering Platform",
+      description:
+        "A Swiggy-like food ordering platform built with React, featuring dynamic live API data, advanced filtering, optimized state management, and a responsive, high-performance UI.",
+      image: Dinemate,
       technologies: ["React", "Node.js", "MongoDB", "Razorpay"],
       github: "https://github.com/vipul752/swiggy-app",
       demo: "#",
       gradient: "from-blue-500 to-cyan-500",
     },
     {
-      id: 2,
+      id: 3,
       title: "YouTube Clone",
       description: "Video streaming platform with redux state management",
       image:
@@ -27,18 +39,7 @@ const ProjectsSection = () => {
       demo: "#",
       gradient: "from-red-500 to-pink-500",
     },
-    {
-      id: 3,
-      title: "ViteCode - LeetCode Clone",
-      description:
-        "Online coding platform with judge & competitive programming",
-      image:
-        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop",
-      technologies: ["React", "Node.js", "MongoDB", "Monaco Editor"],
-      github: "https://github.com/vipul752/leetcode-frontend",
-      demo: "#",
-      gradient: "from-purple-500 to-indigo-500",
-    },
+
     {
       id: 4,
       title: "Voting Application",
@@ -63,7 +64,7 @@ const ProjectsSection = () => {
       >
         <div className="relative h-full rounded-xl overflow-hidden bg-white/50 backdrop-blur-md border border-slate-200/60 group-hover:border-purple-300/80 transition-all duration-300 shadow-sm hover:shadow-lg">
           {/* Image Container */}
-          <div className="relative h-56 md:h-64 overflow-hidden bg-slate-200">
+          <div className="relative h-64  overflow-hidden bg-slate-200">
             <img
               src={project.image}
               alt={project.title}

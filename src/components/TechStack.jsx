@@ -32,7 +32,7 @@ const TechStackSection = () => {
       { name: "Redux", icon: SiRedux, color: "#764ABC" },
       { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
       { name: "CSS3", icon: SiCss3, color: "#1572B6" },
-      { name: "Next.js", icon: SiNextdotjs, color: "#000000" },
+
     ],
     backend: [
       { name: "Node.js", icon: SiNodedotjs, color: "#68A063" },
@@ -45,7 +45,6 @@ const TechStackSection = () => {
     devops: [
       { name: "Docker", icon: SiDocker, color: "#0db7ed" },
       { name: "Git", icon: SiGit, color: "#F05032" },
-      { name: "Kafka", icon: SiApachekafka, color: "#231F20" },
       { name: "MySQL", icon: SiMysql, color: "#4479A1" },
     ],
     tools: [{ name: "Postman", icon: SiPostman, color: "#FF6C37" }],
